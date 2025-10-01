@@ -78,7 +78,7 @@ export default function Index() {
             Ваш автомобиль<br />заслуживает лучшего
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in">
-            Профессиональный детейлинг, бронирование и тюнинг оптики с использованием инновационных технологий и премиальных материалов
+            Технологии и мастерство для идеального состояния вашего авто
           </p>
           <div className="flex gap-4 justify-center animate-scale-in">
             <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg">

@@ -57,7 +57,7 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <div className="text-2xl font-heading font-bold text-foreground">
             AutoPro
           </div>
           <div className="hidden md:flex gap-8">
@@ -66,7 +66,7 @@ export default function Index() {
             <a href="#portfolio" className="hover:text-primary transition-colors">Портфолио</a>
             <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
           </div>
-          <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+          <Button className="bg-primary hover:bg-primary/90">
             Записаться
           </Button>
         </div>
@@ -74,14 +74,14 @@ export default function Index() {
 
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-heading font-extrabold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-heading font-extrabold mb-6 text-foreground animate-fade-in">
             Ваш автомобиль<br />заслуживает лучшего
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in">
             Технологии и мастерство для идеального состояния вашего авто
           </p>
           <div className="flex gap-4 justify-center animate-scale-in">
-            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg">
               <Icon name="Calendar" className="mr-2" size={20} />
               Записаться на услугу
             </Button>
@@ -100,8 +100,8 @@ export default function Index() {
             {services.map((service, index) => (
               <Card key={index} className="group hover:border-primary transition-all hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-1 duration-300">
                 <CardContent className="p-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon name={service.icon} size={28} className="text-white" />
+                  <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon name={service.icon} size={28} className="text-primary-foreground" />
                   </div>
                   <h3 className="text-xl font-heading font-semibold mb-2">{service.title}</h3>
                   <p className="text-muted-foreground">{service.description}</p>
@@ -124,12 +124,12 @@ export default function Index() {
                   <ul className="space-y-2">
                     {item.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <Icon name="CheckCircle2" size={20} className="text-secondary mt-0.5" />
+                        <Icon name="CheckCircle2" size={20} className="text-primary mt-0.5" />
                         <span className="text-sm text-muted-foreground">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full mt-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                  <Button className="w-full mt-6 bg-primary hover:bg-primary/90">
                     Заказать
                   </Button>
                 </CardContent>
@@ -194,7 +194,7 @@ export default function Index() {
                     className="bg-background border-border min-h-32"
                   />
                 </div>
-                <Button type="submit" className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg h-12">
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-lg h-12">
                   <Icon name="Send" className="mr-2" size={20} />
                   Отправить заявку
                 </Button>

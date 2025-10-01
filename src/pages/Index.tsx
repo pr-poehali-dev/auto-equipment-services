@@ -75,7 +75,7 @@ export default function Index() {
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-heading font-extrabold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-fade-in">
-            Технологии будущего<br />для вашего автомобиля
+            Ваш автомобиль<br />заслуживает лучшего
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in">
             Профессиональный детейлинг, бронирование и тюнинг оптики с использованием инновационных технологий и премиальных материалов

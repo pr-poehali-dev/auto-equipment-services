@@ -16,30 +16,18 @@ export default function Index() {
     {
       icon: 'Settings',
       title: 'Установка дополнительного оборудования',
-      description: 'Профессиональная установка автомобильной электроники, сигнализаций, мультимедиа систем'
+      description: 'Профессиональная установка автомобильной электроники, сигнализаций, мультимедиа систем и парковочных систем'
     },
     {
       icon: 'Shield',
       title: 'Бронирование авто',
-      description: 'Защитные пленки для кузова, антигравийное покрытие, бронирование оптики'
+      description: 'Защитные пленки для кузова, антигравийное покрытие, бронирование оптики и элементов экстерьера'
     },
     {
       icon: 'Lightbulb',
       title: 'Восстановление и тюнинг оптики',
-      description: 'Реставрация фар, установка LED/Xenon, тонировка оптики, защитные покрытия'
+      description: 'Реставрация фар, установка LED/Xenon модулей, тонировка оптики, защитные покрытия'
     }
-  ];
-
-  const pricing = [
-    { name: 'Установка оборудования', price: 'от 5 000 ₽', features: ['Сигнализация', 'Мультимедиа', 'Камеры', 'Датчики'] },
-    { name: 'Бронирование', price: 'от 35 000 ₽', features: ['PPF пленка', 'Капот + фары', 'Гарантия 5 лет'] },
-    { name: 'Тюнинг оптики', price: 'от 12 000 ₽', features: ['Восстановление', 'LED модули', 'Покрытие UV'] }
-  ];
-
-  const portfolio = [
-    { image: '/img/b09666f5-0647-47d7-81d2-23ad13d85a6c.jpg', title: 'Керамическое покрытие Audi Q7' },
-    { image: '/img/c0b0195e-f02b-46cf-b835-6c63ecde7c86.jpg', title: 'Восстановление оптики BMW X5' },
-    { image: '/img/17c34415-fc3e-499a-bae4-a8ee4574a0d3.jpg', title: 'Бронирование PPF Mercedes GLE' }
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -49,15 +37,12 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+      <nav className="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="text-2xl font-heading font-bold text-foreground">
-            AutoPro
-          </div>
+          <div className="text-2xl font-bold">AutoService</div>
           <div className="hidden md:flex gap-8">
             <a href="#services" className="hover:text-primary transition-colors">Услуги</a>
-            <a href="#pricing" className="hover:text-primary transition-colors">Прайс</a>
-            <a href="#portfolio" className="hover:text-primary transition-colors">Портфолио</a>
+            <a href="#about" className="hover:text-primary transition-colors">О нас</a>
             <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
           </div>
           <Button className="bg-primary hover:bg-primary/90">
@@ -67,38 +52,32 @@ export default function Index() {
       </nav>
 
       <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-heading font-extrabold mb-6 text-foreground animate-fade-in">
-            Ваш автомобиль<br />заслуживает лучшего
+        <div className="container mx-auto text-center max-w-4xl">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Профессиональный сервис<br />для вашего автомобиля
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in">
-            Технологии и мастерство для идеального состояния вашего авто
+          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+            Качественная установка оборудования, бронирование и тюнинг оптики с гарантией
           </p>
-          <div className="flex gap-4 justify-center animate-scale-in">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg">
-              <Icon name="Calendar" className="mr-2" size={20} />
-              Записаться на услугу
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg border-primary hover:bg-primary/10">
-              <Icon name="Phone" className="mr-2" size={20} />
-              Позвонить
-            </Button>
-          </div>
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg h-14 px-8">
+            <Icon name="Phone" className="mr-2" size={22} />
+            Получить консультацию
+          </Button>
         </div>
       </section>
 
-      <section id="services" className="py-20 px-4 bg-card/50">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-heading font-bold text-center mb-12">Наши услуги</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+      <section id="services" className="py-20 px-4 bg-card/30">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Наши услуги</h2>
+          <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:border-primary transition-all hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-1 duration-300">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon name={service.icon} size={28} className="text-primary-foreground" />
+              <Card key={index} className="group hover:border-primary/50 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                    <Icon name={service.icon} size={32} className="text-primary" />
                   </div>
-                  <h3 className="text-xl font-heading font-semibold mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
+                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -106,59 +85,70 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="pricing" className="py-20 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-heading font-bold text-center mb-12">Прайс-лист</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {pricing.map((item, index) => (
-              <Card key={index} className="hover:border-primary transition-all hover:shadow-xl hover:shadow-primary/20">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-heading font-bold mb-2">{item.name}</h3>
-                  <div className="text-3xl font-bold text-primary mb-4">{item.price}</div>
-                  <ul className="space-y-2">
-                    {item.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Icon name="CheckCircle2" size={20} className="text-primary mt-0.5" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="w-full mt-6 bg-primary hover:bg-primary/90">
-                    Заказать
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="portfolio" className="py-20 px-4 bg-card/50">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-heading font-bold text-center mb-12">Наши работы</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {portfolio.map((work, index) => (
-              <Card key={index} className="overflow-hidden group hover:shadow-2xl hover:shadow-primary/20 transition-all">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={work.image} 
-                    alt={work.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                    <h3 className="text-xl font-heading font-semibold text-white">{work.title}</h3>
+      <section id="about" className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">Почему выбирают нас</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="border-primary/30">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Award" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Опыт более 10 лет</h3>
+                    <p className="text-muted-foreground">Профессиональная команда с подтвержденной квалификацией</p>
                   </div>
                 </div>
-              </Card>
-            ))}
+              </CardContent>
+            </Card>
+            <Card className="border-primary/30">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="ShieldCheck" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Гарантия качества</h3>
+                    <p className="text-muted-foreground">Официальная гарантия на все виды работ и материалы</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-primary/30">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Wrench" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Современное оборудование</h3>
+                    <p className="text-muted-foreground">Используем только проверенные материалы и технологии</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-primary/30">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Clock" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Соблюдение сроков</h3>
+                    <p className="text-muted-foreground">Выполняем работы точно в оговоренные сроки</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      <section id="contacts" className="py-20 px-4">
+      <section id="contacts" className="py-20 px-4 bg-card/30">
         <div className="container mx-auto max-w-2xl">
-          <h2 className="text-4xl font-heading font-bold text-center mb-12">Свяжитесь с нами</h2>
-          <Card className="border-primary/50">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">Свяжитесь с нами</h2>
+          <Card className="border-primary/30">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -167,7 +157,7 @@ export default function Index() {
                     placeholder="Иван Иванов"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="bg-background border-border"
+                    className="h-12"
                   />
                 </div>
                 <div>
@@ -176,37 +166,35 @@ export default function Index() {
                     placeholder="+7 (999) 123-45-67"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="bg-background border-border"
+                    className="h-12"
                   />
                 </div>
                 <div>
                   <label className="block mb-2 font-medium">Сообщение</label>
                   <Textarea 
-                    placeholder="Расскажите, какая услуга вас интересует..."
+                    placeholder="Какая услуга вас интересует?"
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    className="bg-background border-border min-h-32"
+                    className="min-h-32"
                   />
                 </div>
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-lg h-12">
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 h-12 text-lg">
                   <Icon name="Send" className="mr-2" size={20} />
                   Отправить заявку
                 </Button>
               </form>
-              <div className="mt-8 pt-8 border-t border-border">
-                <div className="flex flex-col gap-4 text-center">
-                  <div className="flex items-center justify-center gap-2">
-                    <Icon name="Phone" size={20} className="text-primary" />
-                    <span>+7 (999) 123-45-67</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <Icon name="Mail" size={20} className="text-primary" />
-                    <span>info@autopro.ru</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <Icon name="MapPin" size={20} className="text-primary" />
-                    <span>г. Москва, ул. Автомобильная, д. 1</span>
-                  </div>
+              <div className="mt-8 pt-8 border-t border-border space-y-4">
+                <div className="flex items-center gap-3">
+                  <Icon name="Phone" size={20} className="text-primary" />
+                  <span className="text-lg">+7 (999) 123-45-67</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon name="Mail" size={20} className="text-primary" />
+                  <span className="text-lg">info@autoservice.ru</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon name="MapPin" size={20} className="text-primary" />
+                  <span className="text-lg">г. Москва, ул. Автомобильная, д. 1</span>
                 </div>
               </div>
             </CardContent>
@@ -216,7 +204,7 @@ export default function Index() {
 
       <footer className="py-8 px-4 border-t border-border">
         <div className="container mx-auto text-center text-muted-foreground">
-          <p>&copy; 2025 AutoPro. Все права защищены.</p>
+          <p>&copy; 2025 AutoService. Все права защищены.</p>
         </div>
       </footer>
     </div>

@@ -19,11 +19,6 @@ export default function Index() {
       description: 'Профессиональная установка автомобильной электроники, сигнализаций, мультимедиа систем'
     },
     {
-      icon: 'Sparkles',
-      title: 'Услуги детейлинга',
-      description: 'Комплексная химчистка, полировка кузова, керамическое покрытие премиум-класса'
-    },
-    {
       icon: 'Shield',
       title: 'Бронирование авто',
       description: 'Защитные пленки для кузова, антигравийное покрытие, бронирование оптики'
@@ -36,8 +31,7 @@ export default function Index() {
   ];
 
   const pricing = [
-    { name: 'Детейлинг Базовый', price: 'от 8 000 ₽', features: ['Химчистка салона', 'Мойка кузова', 'Чернение резины'] },
-    { name: 'Детейлинг Премиум', price: 'от 25 000 ₽', features: ['Полная химчистка', 'Полировка кузова', 'Керамика 1 слой', 'Чистка дисков'] },
+    { name: 'Установка оборудования', price: 'от 5 000 ₽', features: ['Сигнализация', 'Мультимедиа', 'Камеры', 'Датчики'] },
     { name: 'Бронирование', price: 'от 35 000 ₽', features: ['PPF пленка', 'Капот + фары', 'Гарантия 5 лет'] },
     { name: 'Тюнинг оптики', price: 'от 12 000 ₽', features: ['Восстановление', 'LED модули', 'Покрытие UV'] }
   ];
@@ -96,7 +90,7 @@ export default function Index() {
       <section id="services" className="py-20 px-4 bg-card/50">
         <div className="container mx-auto">
           <h2 className="text-4xl font-heading font-bold text-center mb-12">Наши услуги</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <Card key={index} className="group hover:border-primary transition-all hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-1 duration-300">
                 <CardContent className="p-6">
@@ -115,7 +109,7 @@ export default function Index() {
       <section id="pricing" className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-4xl font-heading font-bold text-center mb-12">Прайс-лист</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {pricing.map((item, index) => (
               <Card key={index} className="hover:border-primary transition-all hover:shadow-xl hover:shadow-primary/20">
                 <CardContent className="p-6">
